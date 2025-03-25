@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    text-align: center;
+    color: #333;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    image-orientation: from-image;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    position: relative;
+}
+
+.header-image h1 {
+    z-index: 1;
+    position: absolute;
+    top: 15%;
+    left: auto;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* .header-text h1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+} */
+
+.invitation-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin: 10% auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    margin: 10px 0;
+    color: #d63384;
+}
+
+.names {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.date, .venue {
+    font-size: 1.2em;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+#countdown {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: #d63384;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Sponsors Section */
+.sponsors-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sponsors-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sponsors-container li {
+    font-size: 1.2em;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 30%;
+    max-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .invitation-container, .sponsors-container, .photo-gallery {
+        width: 90%;
+    }
+
+    .gallery img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: 90%;
+    }
+}

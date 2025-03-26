@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
 
 :root {
@@ -7,13 +8,17 @@
     --font-style-italic: italic;
     --font-style-normal: normal;
     --font-size-medium: 3rem;
+    --font-family-tangerine: "Tangerine", cursive;
+    --font-weight-tangerine: 400;
+    --font-style-tangerine: normal;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    /* background: linear-gradient(to right, #ff9a9e, #fad0c4); */
+    background-color: rgb(181, 126, 127) !important;
     text-align: center;
     color: #333;
 }
@@ -82,7 +87,7 @@ body {
 }
 
 .invitation-container {
-    background: rgba(255, 255, 255, 0.9);
+    background: transparent;
     padding: 30px;
     margin: 10% auto;
     width: 80%;
@@ -91,9 +96,14 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
+.invitation-container > h2,
+.invitation-container > h3 {
     margin: 10px 0;
-    color: #d63384;
+    font-family: var(--font-family-tangerine);
+    font-style: var(--font-style-tangerine);
+    font-weight: var(--font-weight-tangerine);
+    font-size: 3rem;
+    color: #fff;
 }
 
 .names {
@@ -186,4 +196,93 @@ h1, h2 {
     .gallery img {
         width: 90%;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .child-sponsor {
+    width: 50%;
+    height: auto;
+    position: relative;
+    top: -370px;
+} */
+
+
+
+
+/* .carousel-inner {
+    background-image: url('./imgs/frame.png');
+    background-size: contain;
+    background-position: center;
+} */
+
+.sponsor-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame {
+    position: relative; /* Allows absolute positioning inside */
+    width: 400px; /* Adjust based on the frame size */
+    height: auto;
+}
+
+.frame > img {
+    width: 100%;
+    display: block;
+}
+
+.child-sponsor {
+    position: absolute; /* Keeps it inside the frame */
+    top: 62%; /* Adjust based on where you want the slider */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width to fit inside the frame */
+    height: 370px;
+    overflow: hidden;
+}
+
+.slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+/* Image Timing */
+.slides img:nth-child(1) { animation-delay: 0s; }
+.slides img:nth-child(2) { animation-delay: 3s; }
+.slides img:nth-child(3) { animation-delay: 6s; }
+.slides img:nth-child(4) { animation-delay: 9s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
 }

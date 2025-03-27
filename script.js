@@ -7,7 +7,7 @@ function startCountdown() {
         const difference = targetDate - now;
 
         if (difference <= 0) {
-            countdownElement.innerHTML = "The wedding has begun!";
+            countdownElement.innerHTML = "<div>The wedding has begun!</div>";
             clearInterval(timerInterval);
             return;
         }
@@ -17,7 +17,24 @@ function startCountdown() {
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownElement.innerHTML = `
+            <div>
+                <div class="time">${days}</div>
+                <div class="label">Days</div>
+            </div>
+            <div>
+                <div class="time">${hours}</div>
+                <div class="label">Hours</div>
+            </div>
+            <div>
+                <div class="time">${minutes}</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div>
+                <div class="time">${seconds}</div>
+                <div class="label">Seconds</div>
+            </div>
+        `;
     }
 
     const timerInterval = setInterval(updateCountdown, 1000);

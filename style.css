@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --font-primary: "Great Vibes", cursive;
     --font-weight-normal: 400;
     --font-style-italic: italic;
     --font-style-normal: normal;
+
     --font-size-medium: 3rem;
+
     --font-family-tangerine: "Tangerine", cursive;
     --font-weight-tangerine: 700;
     --font-style-tangerine: normal;
+
     --bs-border-color: pink !important;
+
+    --font-family-raleway: "Raleway", sans-serif;
+    --font-optical-sizing-raleway: auto;
+    --font-weight-raleway: <weight>;
+    --font-style-raleway: normal;
 }
 
 body {
@@ -93,11 +105,11 @@ body {
     background: transparent;
     padding: 30px;
     margin: 10% auto;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 15px;
+    width: 100%;
+    /* max-width: 600px; */
+    border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* height: 100%; */
+    height: 100%;
     /* max-height: 600px; */
     text-align: center;
 }
@@ -113,8 +125,9 @@ body {
 }
 
 .invitation-container > img {
-    width: 100%;
-    height: auto;
+    width: 50%;
+    max-width: 500px;
+    max-height: 500px;
     border-radius: 50%;
     margin: 10px 0;
 }
@@ -151,56 +164,6 @@ body {
     margin: 5px 0;
     font-weight: 500;
 }
-
-/* Photo Gallery */
-.photo-gallery {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.gallery img {
-    width: 100%;
-    /* max-width: 200px; */
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .invitation-container, .sponsors-container, .photo-gallery {
-        width: 90%;
-    }
-
-    .gallery img {
-        width: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery img {
-        width: 90%;
-    }
-}
-
-
 
 .colorPallete {
     display: flex;
@@ -268,6 +231,15 @@ body {
     height: 200px;
 }
 
+#dress-game {
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-size: 1.5rem;
+    color: #C27E79;
+    text-align: center;
+}
+
 
 .countdown-container {
     background: #fff;
@@ -316,7 +288,7 @@ body {
 .countdown-frame {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    max-width: 100%;
     padding: 10px;
 }
 
@@ -334,6 +306,15 @@ body {
     border-radius: 10px;
     right: -30px;
     position: relative;
+}
+
+.countdown-container {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent horizontal scroll */
 }
 
 
@@ -358,27 +339,38 @@ body {
 
 .sponsor-container {
     width: 100%;
-    height: auto;
+    max-height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 150px 0 20px 0;;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .frame {
     position: relative; /* Allows absolute positioning inside */
     width: 600px; /* Adjust based on the frame size */
     height: auto;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 
-.frame > img:nth-child(1) {
+/* .frame > img:nth-child(1) {
     width: 100%;
     display: block;
-    top: -100px;
+    top: 0;
     position: absolute;
     z-index: 1;
+} */
+
+.frame > img:nth-child(1) {
+    width: auto; /* Adjust width to fit the content */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: -30px; /* Align the flower at the top of the frame */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the flower horizontally */
+    z-index: 1; /* Ensure it appears above other elements */
 }
 
 .border-pink {
@@ -424,4 +416,139 @@ body {
     25% { opacity: 1; }
     33% { opacity: 0; }
     100% { opacity: 0; }
+}
+
+
+/* Photo Gallery */
+.photo-gallery {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.photo-gallery h2 {
+    font-family: var(--font-family-tangerine);
+    font-style: var(--font-style-tangerine);
+    font-weight: var(--font-weight-tangerine);
+    font-size: 3rem;
+    color: #C27E79;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Photo Gallery Animation */
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start with invisible images */
+    transform: scale(0.9); /* Start with a slightly smaller size */
+    animation: fadeZoomIn 1s ease-in-out forwards; /* Apply animation */
+}
+
+.gallery img:nth-child(1) {
+    animation-delay: 0s; /* First image appears immediately */
+}
+
+.gallery img:nth-child(2) {
+    animation-delay: 0.2s; /* Second image appears after 0.2s */
+}
+
+.gallery img:nth-child(3) {
+    animation-delay: 0.4s; /* Third image appears after 0.4s */
+}
+
+.gallery img:nth-child(4) {
+    animation-delay: 0.6s; /* Fourth image appears after 0.6s */
+}
+
+/* Hover Effect */
+.gallery img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for Fade and Zoom Animation */
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9); /* Start smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for laptops */
+    }
+}
+
+@media (max-width: 768px) {
+    .invitation-container, .sponsors-container, .photo-gallery {
+        width: 90%;
+    }
+
+    /* .gallery img {
+        width: 45%;
+    } */
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+
+    .gallery img {
+        max-width: 200px; /* Adjust image size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: 90%;
+    }
+
+    .invitation-container {
+
+    }
+
+    .invitation-container > img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .invitation-container > .venue,
+    .invitation-container > .date {
+        font-size: 2.5em;
+        font-family: var(--font-family-raleway);
+        font-style: var(--font-style-raleway);
+        font-weight: var(--font-weight-raleway);
+        color: #C27E79;
+    }
+
+    .invitation-container > h2 {
+        font-size: 3.5em;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .gallery img {
+        max-width: 100%; /* Full width for mobile */
+    }
 }

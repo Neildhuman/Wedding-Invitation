@@ -39,6 +39,7 @@ body {
     position: relative;
     top: 0;
     bottom: 0;
+    /* filter: blur(2px); */
 }
 
 .header-image h1 {
@@ -200,10 +201,58 @@ body {
 
 
 
+.colorPallete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
 
+.color-box {
+    width: 55px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
 
+.color-box:nth-child(1) {
+    background-color: #FFFFFF;
+}
+.color-box:nth-child(2) {
+    background-color: #FFDDE1;
+}
+.color-box:nth-child(3) {
+    background-color: #F4C2C2;
+}
+.color-box:nth-child(4) {
+    background-color: #FFB6C1;
+}
+.color-box:nth-child(5) {
+    background-color: #C08081;
+}
+.color-box:nth-child(6) {
+    background-color: #D3A297;
+}
+.color-box:nth-child(7) {
+    background-color: #BF6464;
+}
+.color-box:nth-child(8) {
+    background-color: #C27E79;
+}
 
+.dress-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
 
+.dress > img {
+    width: 90px;
+    height: 200px;
+}
 
 
 

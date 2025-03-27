@@ -4,6 +4,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -213,8 +215,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
+    overflow: hidden;
+    max-width: 100%;
+    border: 1px solid red; /* Debugging border */
 }
 
 .dressCode > h2, .dressCode > h3 {
@@ -290,9 +295,11 @@ body {
     justify-content: space-around;
     max-width: 100%;
     padding: 10px;
+    overflow: hidden; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
-.countdown-frame img:nth-child(1) {
+/* .countdown-frame img:nth-child(1) {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -306,6 +313,14 @@ body {
     border-radius: 10px;
     right: -30px;
     position: relative;
+} */
+
+.countdown-frame img:nth-child(1),
+.countdown-frame img:nth-child(2) {
+    max-width: 45%; /* Adjust width to fit within the container */
+    height: auto;
+    border-radius: 10px;
+    position: relative; /* Remove left/right offsets */
 }
 
 .countdown-container {
@@ -440,10 +455,11 @@ body {
 }
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    display: grid; /* Use grid layout instead of flexbox */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 15px; /* Space between images */
+    justify-items: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
 }
 
 /* Photo Gallery Animation */
@@ -550,5 +566,18 @@ body {
 
     .gallery img {
         max-width: 100%; /* Full width for mobile */
+    }
+
+    .divider-1{
+        width: 80%;
+        height: 80px; 
+        /* display: flex; 
+        justify-content: center; 
+        align-items: center; */
+        overflow: hidden;
+    }
+
+    .divider-1 img {
+        width: 90%;
     }
 }

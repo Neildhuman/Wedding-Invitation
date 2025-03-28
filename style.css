@@ -65,11 +65,12 @@ body {
     position: absolute;
     top: 5%;
     left: auto;
-    color: rgb(255, 255, 255);
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-normal);
-    font-style: var(--font-style-normal);
-    font-size: var(--font-size-medium);
+    /* color: rgb(255, 255, 255); */
+    color: rgb(234, 112, 112);
+    font-family: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-style: var(--font-style-raleway);
+    font-size: 3em;
     text-align: center;
 }
 
@@ -79,22 +80,22 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    /* color: #C27E79; */
     z-index: 1;
 }
 
 .header-text h3{
     position: relative;
     top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-50%, -15%);
     text-align: center;
-    color: white;
+    color: rgb(234, 112, 112);
     z-index: 1;
     font-family: var(--font-primary) !important;
     font-weight: var(--font-weight-normal);
     font-style: var(--font-style-normal);
-    font-size: var(--font-size-medium);
+    font-size: 5em;
 }
 
 .header-text h3:nth-child(2) {
@@ -474,9 +475,9 @@ button:hover {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     margin: 20px auto;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1200px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
 }
 
 .photo-gallery h2 {
@@ -591,12 +592,12 @@ button:hover {
 
 
 .lastPhoto {
-    margin-top: 20px;
     justify-content: center;
     display: flex;
     align-items: center;
     padding: 10px;
     width: 100%;
+    margin: 20px 0 100px 0;
 }
 
 .lastPhoto img {
@@ -692,6 +693,14 @@ button:hover {
     .gentleReminder {
         width: 90%;
     }
+
+    .footer p {
+        font-size: 7rem;
+    }
+
+    .dressCode > h2, .dressCode > h3 {
+        font-size: 4em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -765,6 +774,18 @@ button:hover {
 
     #countdown div {
         text-align: center;
+    }
+
+    .footer p {
+        font-size: 5rem;
+    }
+
+    .lastPhoto {
+        margin: 20px 0 50px 0;
+    }
+
+    .dressCode > h2, .dressCode > h3 {
+        font-size: 3em;
     }
 
 }

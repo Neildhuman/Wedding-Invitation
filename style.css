@@ -77,7 +77,7 @@ body {
 
 .header-text {
     position: absolute;
-    top: 45%; /* Try adjusting this value to your liking */
+    top: 50%; /* Try adjusting this value to your liking */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;

@@ -45,6 +45,9 @@ body {
     max-height: 600px;
     display: relative;
     overflow: hidden; /* Ensures no extra spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-image img {
@@ -55,7 +58,6 @@ body {
     position: relative;
     top: 0;
     bottom: 0;
-    /* filter: blur(2px); */
 }
 
 .header-image h1 {
@@ -96,11 +98,11 @@ body {
 }
 
 .header-text h3:nth-child(2) {
-    margin-left: 20px; /* Adjust space for '&' */
+    margin-left: 20px;
 }
 
 .header-text h3:nth-child(3) {
-    margin-left: 60px; /* Adjust space for 'Roxanne' */
+    margin-left: 60px;
 }
 
 .invitation-container {
@@ -122,12 +124,20 @@ body {
     font-family: var(--font-family-tangerine);
     font-style: var(--font-style-tangerine);
     font-weight: var(--font-weight-tangerine);
-    font-size: 3rem;
+    font-size: 5rem;
+    color: #C27E79;
+}
+
+.invitation-container > p {
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-size: 2em;
     color: #C27E79;
 }
 
 .invitation-container > img {
-    width: 50%;
+    width: 100%;
     max-width: 500px;
     max-height: 500px;
     border-radius: 50%;
@@ -145,26 +155,21 @@ body {
     font-weight: 500;
 }
 
-/* Sponsors Section */
-.sponsors-container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Add styles for buttons or remove this block if not needed */
+a > button {
+    padding: 10px 20px;
+    font-family: var(--font-family-raleway);
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #C27E79;
+    border: 1px solid #C27E79;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.sponsors-container ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sponsors-container li {
-    font-size: 1.2em;
-    margin: 5px 0;
-    font-weight: 500;
+button:hover {
+    background-color: #A65D5D;
 }
 
 .colorPallete {
@@ -219,21 +224,20 @@ body {
     padding: 10px;
     overflow: hidden;
     max-width: 100%;
-    border: 1px solid red; /* Debugging border */
 }
 
 .dressCode > h2, .dressCode > h3 {
     font-family: var(--font-family-tangerine);
     font-style: var(--font-style-tangerine);
     font-weight: var(--font-weight-tangerine);
-    font-size: 3rem;
+    font-size: 5em;
     color: #C27E79;
     text-align: center;
 }
 
 .dress > img {
-    width: 90px;
-    height: 200px;
+    width: 200px;
+    height: 400px;
 }
 
 #dress-game {
@@ -254,15 +258,18 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
+
 /* Countdown Timer */
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     font-family: 'Arial', sans-serif;
     text-transform: uppercase;
     margin-bottom: 10px;
     top: 50;
+    font-size: 2rem;
 }
 
 #countdown div {
@@ -283,10 +290,12 @@ body {
 
 /* "To go..." Text */
 .to-go-text {
-    font-size: 3.5em;
-    font-family: 'Tangerine', cursive;
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
     color: #C27E79;
     margin: 0;
+    font-size: 5em;
 }
 
 /* Countdown Frame */
@@ -394,43 +403,69 @@ body {
 }
 
 .child-sponsor {
-    position: absolute; /* Keeps it inside the frame */
-    top: 62%; /* Adjust based on where you want the slider */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative; /* Keeps it inside the frame */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
     width: 80%; /* Adjust width to fit inside the frame */
-    height: 370px;
-    overflow: hidden;
+    height: 600px;
+    text-align: center; /* Center text inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
 }
 
-.slides {
+.child-sponsor > div {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: auto;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction when hidden */
+    animation: fadeSponsor 25s infinite; /* Cycle through sections */
+    transition: opacity 0.8s ease-in-out, visibility 0.5s ease-in-out; /* Smooth fade-in/out */
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-size: 1.5rem;
+    color: #C27E79;
 }
 
-.slides img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    animation: fade 12s infinite;
+.child-sponsor h3 {
+    font-size: 2.5rem;
 }
-*/
 
-/* Image Timing */
-.slides img:nth-child(1) { animation-delay: 0s; }
-.slides img:nth-child(2) { animation-delay: 3s; }
-.slides img:nth-child(3) { animation-delay: 6s; }
-.slides img:nth-child(4) { animation-delay: 9s; }
+/* Ensure the first div is visible on page load */
+.child-sponsor > div:nth-child(1) {
+    animation-delay: 0s; /* First section appears immediately */
+}
 
-@keyframes fade {
-    0% { opacity: 0; }
-    8% { opacity: 1; }
-    25% { opacity: 1; }
-    33% { opacity: 0; }
-    100% { opacity: 0; }
+.child-sponsor > div:nth-child(2) {
+    animation-delay: 5s; /* Second section appears after 5 seconds */
+}
+
+.child-sponsor > div:nth-child(3) {
+    animation-delay: 10s; /* Third section appears after 10 seconds */
+}
+
+.child-sponsor > div:nth-child(4) {
+    animation-delay: 15s; /* Fourth section appears after 15 seconds */
+}
+
+.child-sponsor > div:nth-child(5) {
+    animation-delay: 20s; /* Fourth section appears after 15 seconds */
+}
+
+/* Keyframes for fading in and out */
+@keyframes fadeSponsor {
+    0%, 18% {
+        opacity: 1;
+        visibility: visible; /* Show the section */
+    }
+    22%, 100% {
+        opacity: 0;
+        visibility: hidden; /* Hide the section */
+    }
 }
 
 
@@ -463,55 +498,154 @@ body {
 }
 
 /* Photo Gallery Animation */
+
 .gallery img {
     width: 100%;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    opacity: 0; /* Start with invisible images */
-    transform: scale(0.9); /* Start with a slightly smaller size */
-    animation: fadeZoomIn 1s ease-in-out forwards; /* Apply animation */
-}
-
-.gallery img:nth-child(1) {
-    animation-delay: 0s; /* First image appears immediately */
-}
-
-.gallery img:nth-child(2) {
-    animation-delay: 0.2s; /* Second image appears after 0.2s */
-}
-
-.gallery img:nth-child(3) {
-    animation-delay: 0.4s; /* Third image appears after 0.4s */
-}
-
-.gallery img:nth-child(4) {
-    animation-delay: 0.6s; /* Fourth image appears after 0.6s */
-}
-
-/* Hover Effect */
-.gallery img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Keyframes for Fade and Zoom Animation */
-@keyframes fadeZoomIn {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  /* Show class added via JS */
+  .gallery img.show {
+    animation: fadeZoomIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeZoomIn {
     0% {
-        opacity: 0;
-        transform: scale(0.9); /* Start smaller */
+      opacity: 0;
+      transform: scale(0.9);
     }
     100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+.dividerFooter {
+    width: 100%;
+    height: 50px;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.footer p {
+    font-family: var(--font-family-tangerine);
+    font-style: var(--font-style-tangerine);
+    font-weight: var(--font-weight-tangerine);
+    font-size: 8rem;
+    color: #C27E79;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.footer p.visible {
+    animation: slideFadeIn 1s ease-in forwards;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20%) rotate(-25deg);
+    }
+    
+    to {
         opacity: 1;
-        transform: scale(1); /* End at normal size */
+        transform: translate(-50%, -50%) rotate(-25deg);
     }
 }
+
+.gentleReminder {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 20px;
+}
+
+.gentleReminder p:nth-child(1) {
+    font-family: var(--font-family-tangerine);
+    font-style: var(--font-style-tangerine);
+    font-weight: var(--font-weight-tangerine);
+    font-size: 3em;
+    color: #C27E79;
+}
+
+.gentleReminder p:nth-child(2) {
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-size: 2em;
+    color: #C27E79;
+}
+
+
+.lastPhoto {
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.lastPhoto img {
+    width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Styles */
 
 @media (max-width: 1024px) {
     .gallery {
         grid-template-columns: repeat(3, 1fr); /* 3 columns for laptops */
+    }
+
+    .invitation-container > img {
+        width: 50%;
+        height: 400px;
     }
 }
 
@@ -531,15 +665,38 @@ body {
     .gallery img {
         max-width: 200px; /* Adjust image size for smaller screens */
     }
+
+    .dress > img {
+        width: 150px;
+        height: 300px;
+    }
+
+    .invitation-container > img {
+        width: 50%;
+        height: 300px;
+    }
+
+    #countdown {
+        gap: 20px; /* Reduce spacing between countdown items */
+        font-size: 1.8rem; /* Adjust overall font size */
+    }
+
+    #countdown .time {
+        font-size: 2.5em; /* Adjust font size for numbers */
+    }
+
+    #countdown .label {
+        font-size: 0.7em; /* Adjust font size for labels */
+    }
+
+    .gentleReminder {
+        width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
     .gallery img {
         width: 90%;
-    }
-
-    .invitation-container {
-
     }
 
     .invitation-container > img {
@@ -580,4 +737,34 @@ body {
     .divider-1 img {
         width: 90%;
     }
+
+    .countdown-frame {
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .dress > img {
+        width: 90px;
+        height: 200px;
+    }
+
+    #countdown {
+        display: grid; /* Switch to grid layout */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 10px; /* Reduce spacing between items */
+        font-size: 2rem; /* Adjust overall font size */
+    }
+
+    #countdown .time {
+        font-size: 2em; /* Smaller font size for numbers */
+    }
+
+    #countdown .label {
+        font-size: 0.6em; /* Smaller font size for labels */
+    }
+
+    #countdown div {
+        text-align: center;
+    }
+
 }

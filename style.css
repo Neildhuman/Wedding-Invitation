@@ -53,58 +53,78 @@ body {
 .header-image img {
     width: 100%;
     height: 600px;
-    object-fit: cover;
+    object-fit:unset;
     z-index: -1;
     position: relative;
     top: 0;
     bottom: 0;
+    filter: blur(1.5px);
 }
 
 .header-image h1 {
     z-index: 1;
     position: absolute;
-    top: 5%;
+    top: 8%;
     left: auto;
     /* color: rgb(255, 255, 255); */
-    color: rgb(234, 112, 112);
+    color: #fff;
     font-family: var(--font-style-raleway);
     font-weight: var(--font-weight-raleway);
     font-style: var(--font-style-raleway);
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
 }
 
-.header-text { 
+.header-text {
     position: absolute;
-    top: 50%;
+    top: 45%; /* Try adjusting this value to your liking */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    /* color: #C27E79; */
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.header-text h3{
+/* .header-text h3{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -15%);
     text-align: center;
-    color: rgb(234, 112, 112);
+    color: #fff;
     z-index: 1;
     font-family: var(--font-primary) !important;
     font-weight: var(--font-weight-normal);
     font-style: var(--font-style-normal);
     font-size: 5em;
+} */
+
+.header-text h3{
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    font-family: var(--font-primary) !important;
+    font-weight: var(--font-weight-normal);
+    font-style: var(--font-style-normal);
+    font-size: 5em;
+    text-shadow: 
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 
-.header-text h3:nth-child(2) {
+/* .header-text h3:nth-child(2) {
     margin-left: 20px;
 }
 
 .header-text h3:nth-child(3) {
     margin-left: 60px;
-}
+} */
 
 .invitation-container {
     background: transparent;
@@ -112,8 +132,7 @@ body {
     margin: 10% auto;
     width: 100%;
     /* max-width: 600px; */
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
     height: 100%;
     /* max-height: 600px; */
     text-align: center;
@@ -122,11 +141,25 @@ body {
 .invitation-container > h2,
 .invitation-container > h3 {
     margin: 10px 0;
+    color: #C27E79;
+}
+
+.invitation-container footer {
+    color: #C27E79;
+}
+
+.invitation-container > h2 {
+    font-size: 6rem;
     font-family: var(--font-family-tangerine);
     font-style: var(--font-style-tangerine);
     font-weight: var(--font-weight-tangerine);
-    font-size: 5rem;
-    color: #C27E79;
+}
+
+.invitation-container > h3 {
+    font-size: 3rem;
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
 }
 
 .invitation-container > p {
@@ -179,11 +212,13 @@ button:hover {
     align-items: center;
     gap: 10px;
     padding: 10px;
+    height: 100px;
+    width: 100%;
 }
 
 .color-box {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     border: 1px solid #000;
     border-radius: 50%;
 }
@@ -231,7 +266,7 @@ button:hover {
     font-family: var(--font-family-tangerine);
     font-style: var(--font-style-tangerine);
     font-weight: var(--font-weight-tangerine);
-    font-size: 5em;
+    font-size: 6em;
     color: #C27E79;
     text-align: center;
 }
@@ -484,7 +519,7 @@ button:hover {
     font-family: var(--font-family-tangerine);
     font-style: var(--font-style-tangerine);
     font-weight: var(--font-weight-tangerine);
-    font-size: 3rem;
+    font-size: 6em;
     color: #C27E79;
     text-align: center;
     margin: 10px 0 20px 0;
@@ -502,7 +537,7 @@ button:hover {
 
 .gallery img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 7px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -652,19 +687,19 @@ button:hover {
 
 @media (max-width: 768px) {
     .invitation-container, .sponsors-container, .photo-gallery {
-        width: 90%;
+        width: 95%;
     }
 
-    /* .gallery img {
-        width: 45%;
-    } */
+    .photo-gallery h2 {
+        font-size: 3.7rem;
+    }
 
     .gallery {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
     }
 
     .gallery img {
-        max-width: 200px; /* Adjust image size for smaller screens */
+        max-width: 300px; /* Adjust image size for smaller screens */
     }
 
     .dress > img {
@@ -679,7 +714,7 @@ button:hover {
 
     #countdown {
         gap: 20px; /* Reduce spacing between countdown items */
-        font-size: 1.8rem; /* Adjust overall font size */
+        font-size: 2rem; /* Adjust overall font size */
     }
 
     #countdown .time {
@@ -701,29 +736,50 @@ button:hover {
     .dressCode > h2, .dressCode > h3 {
         font-size: 4em;
     }
+
+    .invitation-container > h2{
+        font-size: 5rem;
+    }   
+
+    .invitation-container > h3 {
+        font-size: 2.5rem;
+    }
+
+    .header-image h1 {
+        font-size: 3em;
+    }
+
+    .color-box {
+        width: 20%;
+        height: 80px;
+    }
 }
 
 @media (max-width: 480px) {
+    .invitation-container > h2{
+        font-size: 3.7rem;
+    }   
+
+    .invitation-container > h3 {
+        font-size: 1.8rem;
+    }   
+
     .gallery img {
         width: 90%;
     }
 
     .invitation-container > img {
-        width: 100%;
+        width: 90%;
         height: 300px;
     }
 
     .invitation-container > .venue,
     .invitation-container > .date {
-        font-size: 2.5em;
+        font-size: 2em;
         font-family: var(--font-family-raleway);
         font-style: var(--font-style-raleway);
         font-weight: var(--font-weight-raleway);
         color: #C27E79;
-    }
-
-    .invitation-container > h2 {
-        font-size: 3.5em;
     }
 
     .gallery {
@@ -788,4 +844,22 @@ button:hover {
         font-size: 3em;
     }
 
+    .header-text h3{
+        font-size: 4em;
+    }
+
+    .to-go-text {
+        font-size: 2.5em;
+    }
+
+    .color-box {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 320px) {
+    .child-sponsor div h3 {
+        font-size: 1.3em;
+    }
 }

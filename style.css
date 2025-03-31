@@ -39,6 +39,12 @@ body {
     color: #333;
 }
 
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header-image {
     width: 100%;
     /* height: 500px; */
@@ -746,7 +752,7 @@ button:hover {
     }
 
     .header-image h1 {
-        font-size: 3em;
+        font-size: 2.8em;
     }
 
     .color-box {
@@ -755,7 +761,11 @@ button:hover {
     }
 
     .header-text {
-        top: 60%;
+        top: 45%;
+    }
+
+    .header-text h3 {
+        font-size: 3.5em;
     }
 }
 
@@ -849,11 +859,15 @@ button:hover {
     }
 
     .header-text{
-        top: 50%;
+        top: 45%;
     }
 
     .header-text h3{
-        font-size: 4em;
+        font-size: 3em;
+    }
+
+    .header-image h1 {
+        font-size: 2.5em;
     }
 
     .to-go-text {

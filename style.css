@@ -358,6 +358,7 @@ button:hover {
     margin-bottom: 10px;
     top: 50;
     font-size: 2rem;
+    margin-top: 50px;
 }
 
 #countdown div {
@@ -740,8 +741,8 @@ button:hover {
     }
 
     .gallery img:nth-child(3n + 1) {
-        grid-column: span 1; /* Reset to single column */
-        grid-row: span 1;
+        grid-column: span 2; /* Reset to single column */
+        grid-row: span 2;
     }
 
     .invitation-container > img {
@@ -768,8 +769,8 @@ button:hover {
     }
 
     .gallery img:nth-child(3n + 1) {
-        grid-column: span 1; /* Reset big images to normal */
-        grid-row: span 1;
+        grid-column: span 1; /* Reset to single column */
+        grid-row: span 2;
     }
 
     .gallery img {
@@ -842,7 +843,7 @@ button:hover {
     }
 
     .verse-img img {
-        height: 500px;
+        height: 600px;
     }
 
     .verse-text footer {
@@ -965,10 +966,28 @@ button:hover {
         width: 50%;
         height: 50%;
     }
+
+    .bible-verse {
+        max-height: 1200px;
+    }
+    
+    .verse-img img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 425px) {
+    .bible-verse {
+        max-height: 2000px;
+    }
 }
 
 @media (max-width: 320px) {
     .child-sponsor div h3 {
         font-size: 1.3em;
+    }
+
+    .bible-verse {
+        max-height: 1800px;
     }
 }

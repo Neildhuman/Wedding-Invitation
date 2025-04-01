@@ -39,17 +39,11 @@ body {
     color: #333;
 }
 
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .header-image {
     width: 100%;
     /* height: 500px; */
     max-height: 600px;
-    display: relative;
+    position: relative;
     overflow: hidden; /* Ensures no extra spacing */
     display: flex;
     justify-content: center;
@@ -59,7 +53,7 @@ body {
 .header-image img {
     width: 100%;
     height: 600px;
-    object-fit:unset;
+    object-fit:cover;
     z-index: -1;
     position: relative;
     top: 0;
@@ -79,11 +73,16 @@ body {
     font-style: var(--font-style-raleway);
     font-size: 4em;
     text-align: center;
+    text-shadow: 
+    -1px -1px 0 #C27E79,
+     1px -1px 0 #C27E79,
+    -1px  1px 0 #C27E79,
+     1px  1px 0 #C27E79;
 }
 
 .header-text {
     position: absolute;
-    top: 48%; /* Try adjusting this value to your liking */
+    top: 70%; /* Try adjusting this value to your liking */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -118,10 +117,10 @@ body {
     font-style: var(--font-style-normal);
     font-size: 5em;
     text-shadow: 
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
+    -1px -1px 0 #C27E79,
+     1px -1px 0 #C27E79,
+    -1px  1px 0 #C27E79,
+     1px  1px 0 #C27E79;
 }
 
 /* .header-text h3:nth-child(2) {
@@ -131,6 +130,44 @@ body {
 .header-text h3:nth-child(3) {
     margin-left: 60px;
 } */
+
+.bible-verse {
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-height: 700px;
+    overflow: hidden;
+}
+
+.verse-text {
+    padding: 10px;
+    font-size: 6rem;
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    color: #C27E79;
+}
+
+.verse-img {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect container size */
+}
+
+.verse-img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Ensures full image fits without cropping */
+    display: block;
+    border-radius: 5px;
+    border: 1px solid black;
+}
 
 .invitation-container {
     background: transparent;
@@ -268,11 +305,20 @@ button:hover {
     max-width: 100%;
 }
 
-.dressCode > h2, .dressCode > h3 {
+.dressCode > h2 {
     font-family: var(--font-family-tangerine);
     font-style: var(--font-style-tangerine);
     font-weight: var(--font-weight-tangerine);
     font-size: 6em;
+    color: #C27E79;
+    text-align: center;
+}
+
+.dressCode > h3 {
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-size: 2.5em;
     color: #C27E79;
     text-align: center;
 }
@@ -530,16 +576,20 @@ button:hover {
     text-align: center;
     margin: 10px 0 20px 0;
 }
-
 .gallery {
-    display: grid; /* Use grid layout instead of flexbox */
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
-    gap: 15px; /* Space between images */
-    justify-items: center; /* Center images horizontally */
-    align-items: center; /* Center images vertically */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
 }
 
 /* Photo Gallery Animation */
+
+.gallery img:nth-child(3n + 1) {
+    grid-column: span 2;  /* Makes it take 2 columns */
+    grid-row: span 2; /* Takes up more vertical space */
+}
 
 .gallery img {
     width: 100%;
@@ -681,8 +731,17 @@ button:hover {
 /* Responsive Styles */
 
 @media (max-width: 1024px) {
+    /* .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for laptops 
+    } */
+
     .gallery {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for laptops */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img:nth-child(3n + 1) {
+        grid-column: span 1; /* Reset to single column */
+        grid-row: span 1;
     }
 
     .invitation-container > img {
@@ -700,8 +759,17 @@ button:hover {
         font-size: 3.7rem;
     }
 
+    /* .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets 
+    } */
+
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    }
+
+    .gallery img:nth-child(3n + 1) {
+        grid-column: span 1; /* Reset big images to normal */
+        grid-row: span 1;
     }
 
     .gallery img {
@@ -761,11 +829,34 @@ button:hover {
     }
 
     .header-text {
-        top: 45%;
+        top: 60%;
     }
 
     .header-text h3 {
         font-size: 3.5em;
+    }
+
+    .bible-verse {
+        flex-wrap: wrap;
+        max-height: 1000px;
+    }
+
+    .verse-img img {
+        height: 500px;
+    }
+
+    .verse-text footer {
+        text-align: center;
+    }
+
+    .verse-text h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 image per row */
     }
 }
 
@@ -856,10 +947,6 @@ button:hover {
 
     .dressCode > h2, .dressCode > h3 {
         font-size: 3em;
-    }
-
-    .header-text{
-        top: 45%;
     }
 
     .header-text h3{

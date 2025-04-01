@@ -1055,6 +1055,10 @@ button:hover {
         font-size: 1.5rem;
         top: 60%;
     }
+
+    .verse-text h3 {
+        text-align: justify;
+    }
 }
 
 @media (max-width: 320px) {
@@ -1076,5 +1080,13 @@ button:hover {
 
     .gentleReminder ul li h3 {
         font-size: 1.4em;
+    }
+
+    .countdown-container h1 {
+        font-size: 3em;
+    }
+
+    .countdown-container p {
+        font-size: 2em;
     }
 }

@@ -710,6 +710,10 @@ button:hover {
     width: 90%;
 }
 
+.gentleReminder ul {
+    padding: 0;
+}
+
 .gentleReminder ul li {
     list-style: none;
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
 
 * {
     box-sizing: border-box;
@@ -26,6 +27,10 @@
     --font-optical-sizing-raleway: auto;
     --font-weight-raleway: <weight>;
     --font-style-raleway: normal;
+
+    --font-family-gravitas: "Gravitas One", serif;
+    --font-weight-gravitas: 400;
+    --font-style-gravitas: normal;
 }
 
 body {
@@ -71,7 +76,7 @@ body {
     font-family: var(--font-style-raleway);
     font-weight: var(--font-weight-raleway);
     font-style: var(--font-style-raleway);
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     text-shadow: 
     -1px -1px 0 #C27E79,
@@ -91,6 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 1.2rem;
 }
 
 /* .header-text h3{
@@ -306,9 +312,9 @@ button:hover {
 }
 
 .dressCode > h2 {
-    font-family: var(--font-family-tangerine);
-    font-style: var(--font-style-tangerine);
-    font-weight: var(--font-weight-tangerine);
+    font-family: var(--font-family-gravitas);
+    font-weight: var(--font-weight-gravitas);
+    font-style: var(--font-style-gravitas);
     font-size: 6em;
     color: #C27E79;
     text-align: center;
@@ -335,15 +341,6 @@ button:hover {
     font-size: 1.5rem;
     color: #C27E79;
     text-align: center;
-}
-
-
-.countdown-container {
-    background: #fff;
-    padding: 10px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -387,6 +384,24 @@ button:hover {
     font-size: 5em;
 }
 
+.countdown-container h1 {
+    font-family: var(--font-family-gravitas);
+    font-weight: var(--font-weight-gravitas);
+    font-style: var(--font-style-gravitas);
+    font-size: 5em;
+    color: #C27E79;
+    margin-bottom: 20px;
+}
+
+.countdown-container p {
+    font-family: var(--font-family-gravitas);
+    font-weight: var(--font-weight-gravitas);
+    font-style: var(--font-style-gravitas);
+    font-size: 3.5em;
+    color: #C27E79;
+    margin-bottom: 20px;
+}
+
 /* Countdown Frame */
 .countdown-frame {
     display: flex;
@@ -426,7 +441,6 @@ button:hover {
     padding: 10px;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Prevent horizontal scroll */
 }
 
@@ -667,9 +681,9 @@ button:hover {
 }
 
 .gentleReminder p:nth-child(1) {
-    font-family: var(--font-family-tangerine);
-    font-style: var(--font-style-tangerine);
-    font-weight: var(--font-weight-tangerine);
+    font-family: var(--font-family-gravitas);
+    font-weight: var(--font-weight-gravitas);
+    font-style: var(--font-style-gravitas);
     font-size: 3em;
     color: #C27E79;
 }
@@ -694,6 +708,25 @@ button:hover {
 
 .lastPhoto img {
     width: 90%;
+}
+
+.gentleReminder ul li {
+    list-style: none;
+}
+
+.gentleReminder ul li h3 {
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-weight: var(--font-weight-raleway);
+    font-size: 2.5em;
+    color: #C27E79;
+}
+
+.gentleReminder ul li p {
+    font-family: var(--font-family-raleway);
+    font-style: var(--font-style-raleway);
+    font-size: 1.5em;
+    color: #C27E79;
 }
 
 
@@ -784,7 +817,7 @@ button:hover {
 
     .invitation-container > img {
         width: 50%;
-        height: 300px;
+        height: 320px;
     }
 
     #countdown {
@@ -821,7 +854,7 @@ button:hover {
     }
 
     .header-image h1 {
-        font-size: 2.8em;
+        font-size: 1.8em;
     }
 
     .color-box {
@@ -831,6 +864,7 @@ button:hover {
 
     .header-text {
         top: 60%;
+        font-size: 1.5rem;
     }
 
     .header-text h3 {
@@ -852,6 +886,14 @@ button:hover {
 
     .verse-text h3 {
         font-size: 2rem;
+    }
+
+    .countdown-container h1 {
+        font-size: 4em;
+    }
+    
+    .countdown-container p {
+        font-size: 2.8em;
     }
 }
 
@@ -955,7 +997,7 @@ button:hover {
     }
 
     .header-image h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .to-go-text {
@@ -980,6 +1022,19 @@ button:hover {
     .bible-verse {
         max-height: 2000px;
     }
+
+    .verse-text .footer {
+        font-size: 1.8rem;
+    }
+
+    .invitation-container > img {
+        height: 270px;
+    }
+
+    .header-text {
+        font-size: 1.5rem;
+        top: 60%;
+    }
 }
 
 @media (max-width: 320px) {
@@ -989,5 +1044,13 @@ button:hover {
 
     .bible-verse {
         max-height: 1800px;
+    }
+
+    .invitation-container > img {
+        height: 220px;
+    }
+
+    .colorPallete {
+        height: 80px;
     }
 }

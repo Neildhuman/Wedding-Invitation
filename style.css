@@ -1077,6 +1077,19 @@ button:hover {
         font-size: 1.5rem;
         top: 60%;
     }
+
+    .countdown-container h1 {
+        font-size: 2em;
+    }
+
+    .color-box {
+        width: 50%;
+        height: 45%;
+    }
+
+    .dressCode > h2, .dressCode > h3 {
+        font-size: 2em;
+    }
 }
 
 @media (max-width: 320px) {

@@ -913,7 +913,7 @@ button:hover {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .gallery {
         grid-template-columns: 1fr; /* 1 image per row */
     }
@@ -924,8 +924,8 @@ button:hover {
     }
 
     .color-box {
-        width: 20%;
-        height: 60px;
+        width: 50%;
+        height: 55%;
     }
 }
 

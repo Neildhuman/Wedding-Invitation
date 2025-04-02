@@ -784,7 +784,7 @@ button:hover {
 
     .invitation-container > img {
         width: 50%;
-        height: 400px;
+        height: 450px;
     }
 }
 
@@ -917,6 +917,11 @@ button:hover {
     .gallery {
         grid-template-columns: 1fr; /* 1 image per row */
     }
+
+    .invitation-container img {
+        height: 250px;
+        width: 55%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1044,6 +1049,10 @@ button:hover {
     .countdown-container p {
         font-size: 2.4em;
     }
+
+    .verse-text h3 {
+        text-align: justify;
+    }
 }
 
 @media (max-width: 425px) {
@@ -1062,10 +1071,6 @@ button:hover {
     .header-text {
         font-size: 1.5rem;
         top: 60%;
-    }
-
-    .verse-text h3 {
-        text-align: justify;
     }
 }
 

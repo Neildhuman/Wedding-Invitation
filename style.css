@@ -889,7 +889,7 @@ button:hover {
     }
 
     .verse-text h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .countdown-container h1 {
@@ -922,6 +922,11 @@ button:hover {
         height: 250px;
         width: 55%;
     }
+
+    .color-box {
+        width: 20%;
+        height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -930,7 +935,7 @@ button:hover {
     }   
 
     .invitation-container > h3 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }   
 
     .gallery img {
@@ -1010,7 +1015,7 @@ button:hover {
     }
 
     .dressCode > h2, .dressCode > h3 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     .header-text h3{
@@ -1043,11 +1048,11 @@ button:hover {
     }
 
     .countdown-container h1 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     .countdown-container p {
-        font-size: 2.4em;
+        font-size: 1.5em;
     }
 
     .verse-text h3 {
@@ -1095,11 +1100,11 @@ button:hover {
         font-size: 1.4em;
     }
 
-    .countdown-container h1 {
-        font-size: 3em;
+    .countdown-container p:nth-child(2) {
+        font-size: 1.8em;
     }
 
-    .countdown-container p {
-        font-size: 2em;
+    .countdown-container p:nth-child(3) {
+        font-size: 1.5em;
     }
 }
